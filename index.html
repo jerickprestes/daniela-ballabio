@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Ballabio Design</title>
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<!-- Reusable clip path + logo symbol -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <clipPath id="facilityClip" clipPathUnits="objectBoundingBox">
+      <path d="M 0.557333,0 L 0.69638,0 L 0.810141,0.30337 L 0.924807,0.605139 L 0.917589,0.756019 L 0.910365,0.905296 L 0.826396,0.953454 L 0.742427,1 L 0.439057,0.866769 C 0.272021,0.794546 0.12124,0.723917 0.104984,0.712676 L 0.075193,0.690213 L 0.075193,0.390046 L 0.215141,0.226324 C 0.292786,0.138037 0.362594,0.071259 0.36863,0.064204 C 0.386198,0.043657 0.414068,0.017296 0.418286,0.014444 C 0.43474,0.003324 0.480589,0 0.557333,0 L 0.557333,0 Z M 0.416714,0.021463 L 0.090151,0.69588 L 0.915911,0.597333 L 0.416714,0.021463 Z" clip-rule="evenodd" />
+    </clipPath>
+  </defs>
+</svg>
+
+<template id="logo-svg">
+  <svg viewBox="0 0 1920 1080" class="logo-mark" xmlns="http://www.w3.org/2000/svg">
+    <path d="m1070.08 0h266.97l218.42 327.64 220.16 325.91-13.86 162.95-13.87 161.22-161.22 52.01-161.22 50.27-582.47-143.89c-320.71-78-610.21-154.28-641.42-166.42l-57.2-24.26v-324.18l268.7-176.82c149.08-95.35 283.11-167.47 294.7-175.09 33.73-22.19 87.24-50.66 95.34-53.74 31.59-12.01 119.62-15.6 266.97-15.6zm-269.99 23.18l-627 728.37 1585.46-106.43z"/>
+  </svg>
+</template>
+
+<!-- ============ NAV ============ -->
+<nav class="topnav">
+  <div class="brand">
+    <svg class="logo-mark" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg"><path d="m1070.08 0h266.97l218.42 327.64 220.16 325.91-13.86 162.95-13.87 161.22-161.22 52.01-161.22 50.27-582.47-143.89c-320.71-78-610.21-154.28-641.42-166.42l-57.2-24.26v-324.18l268.7-176.82c149.08-95.35 283.11-167.47 294.7-175.09 33.73-22.19 87.24-50.66 95.34-53.74 31.59-12.01 119.62-15.6 266.97-15.6zm-269.99 23.18l-627 728.37 1585.46-106.43z"/></svg>
+    <span class="wordmark">
+      <img class="wordmark-img wordmark-dark" src="assets/images/wordmark-dark.svg" alt="Ballabio Design">
+      <img class="wordmark-img wordmark-light" src="assets/images/wordmark-light.svg" alt="" aria-hidden="true">
+    </span>
+  </div>
+  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="offcanvasMenu">
+    <span class="menu-toggle-bar"></span>
+    <span class="menu-toggle-bar"></span>
+    <span class="menu-toggle-bar"></span>
+  </button>
+</nav>
+
+<!-- ============ MENU OFF-CANVAS ============ -->
+<div class="offcanvas-backdrop" id="offcanvasBackdrop"></div>
+<aside class="offcanvas-menu" id="offcanvasMenu" aria-hidden="true">
+  <button class="offcanvas-close" id="offcanvasClose" aria-label="Fechar menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+  </button>
+  <nav class="offcanvas-links">
+    <a href="#hero" class="offcanvas-link"><span class="offcanvas-num">01</span>Início</a>
+    <a href="#sobre" class="offcanvas-link"><span class="offcanvas-num">02</span>Sobre</a>
+    <a href="#servicos" class="offcanvas-link"><span class="offcanvas-num">03</span>Serviços</a>
+    <a href="#diferencial" class="offcanvas-link"><span class="offcanvas-num">04</span>Diferencial</a>
+    <a href="#publico" class="offcanvas-link"><span class="offcanvas-num">05</span>Para quem é</a>
+    <a href="#parceiros" class="offcanvas-link"><span class="offcanvas-num">06</span>Parceiros</a>
+    <a href="#projetos" class="offcanvas-link"><span class="offcanvas-num">07</span>Projetos</a>
+    <a href="#brainstorm" class="offcanvas-link"><span class="offcanvas-num">08</span>Brainstorm</a>
+  </nav>
+  <a href="#brainstorm" class="btn-primary offcanvas-cta">Quero começar meu projeto ↓</a>
+</aside>
+
+<!-- ============ HERO + SOBRE (fundo compartilhado com parallax) ============ -->
+<div class="hero-sobre-parallax">
+  <div class="parallax-bg" style="background-image: url('assets/images/sobre.jpg');"></div>
+  <div class="hero-sobre-overlay"></div>
+
+  <header class="hero slide-dark" id="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Facility — por Ballabio Design</p>
+      <h1>Conectamos marcas, profissionais e projetos para transformar espaços <em>com facilidade</em></h1>
+      <p class="lead">Da curadoria de fornecedores à execução: reunimos tudo o que seu projeto precisa em um só lugar, com quem já resolve isso há anos.</p>
+      <a href="#brainstorm" class="btn-primary">Quero começar meu projeto ↓</a>
+    </div>
+    <div class="hero-frame">
+      <div class="clip-photo" aria-hidden="true"></div>
+    </div>
+  </header>
+
+  <!-- ============ SOBRE ============ -->
+  <section class="sobre-section slide-dark" id="sobre">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Sobre o Facility</p>
+        <h2>Um serviço, e mais por vir</h2>
+        <p>O Facility nasceu para simplificar um processo que costuma ser cheio de etapas: encontrar os fornecedores certos, negociar boas condições e garantir que tudo se encaixe no seu projeto. Novos formatos de atendimento estão a caminho.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card price-card--active">
+          <span class="price-badge">Serviço principal</span>
+          <h3>Facility</h3>
+          <p class="price-card-desc">Curadoria de fornecedores, representação comercial e acompanhamento completo do seu projeto — do início à entrega.</p>
+          <div class="price-value">Sob orçamento</div>
+          <a href="#brainstorm" class="btn-primary price-cta">Começar meu brainstorm ↓</a>
+          <ul class="price-features">
+            <li><span class="check">✓</span> Curadoria de fornecedores</li>
+            <li><span class="check">✓</span> Relacionamento direto com fábricas</li>
+            <li><span class="check">✓</span> Condições comerciais diferenciadas</li>
+            <li><span class="check">✓</span> Soluções integradas em um só atendimento</li>
+            <li><span class="check">✓</span> Suporte do início à entrega</li>
+          </ul>
+        </div>
+
+        <div class="price-card price-card--locked">
+          <div class="price-card-blur">
+            <span class="price-badge">Em breve</span>
+            <h3>Novo plano</h3>
+            <p class="price-card-desc">Estamos preparando um novo formato de atendimento para em breve.</p>
+            <div class="price-value">?????</div>
+            <div class="price-cta-ghost"></div>
+            <ul class="price-features">
+              <li><span class="check">✓</span> Em desenvolvimento</li>
+              <li><span class="check">✓</span> Em desenvolvimento</li>
+              <li><span class="check">✓</span> Em desenvolvimento</li>
+              <li><span class="check">✓</span> Em desenvolvimento</li>
+            </ul>
+          </div>
+          <div class="price-lock">
+            <span class="lock-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+            </span>
+            <span class="lock-label">Em breve</span>
+          </div>
+        </div>
+
+        <div class="price-card price-card--locked">
+          <div class="price-card-blur">
+            <span class="price-badge">Em breve</span>
+            <h3>Novo plano</h3>
+            <p class="price-card-desc">Estamos preparando um novo formato de atendimento para em breve.</p>
+            <div class="price-value">?????</div>
+            <div class="price-cta-ghost"></div>
+            <ul class="price-features">
+              <li><span class="check">✓</span> Em desenvolvimento</li>
+              <li><span class="check">✓</span> Em desenvolvimento</li>
+              <li><span class="check">✓</span> Em desenvolvimento</li>
+              <li><span class="check">✓</span> Em desenvolvimento</li>
+            </ul>
+          </div>
+          <div class="price-lock">
+            <span class="lock-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+            </span>
+            <span class="lock-label">Em breve</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ============ SERVIÇOS ============ -->
+<section class="servicos slide-dark" id="servicos">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Serviços / portfólio</p>
+      <h2>Tudo que seu projeto pode precisar, em um só lugar</h2>
+    </div>
+    <p class="serv-intro">Trabalhamos direto com fábricas e fornecedores especializados — o que significa condições comerciais diferenciadas e orçamentos mais competitivos para você, sem abrir mão da qualidade.</p>
+    <div class="serv-grid">
+      <div class="serv-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3" /> <path d="M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z" /> <path d="M5 18v2" /> <path d="M19 18v2" /></svg></span>
+        <span>Móveis planejados</span>
+      </div>
+      <div class="serv-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z" /> <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" /> <circle cx="17.5" cy="10.5" r=".5" fill="currentColor" /> <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" /> <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" /></svg></span>
+        <span>Decoração e revestimentos</span>
+      </div>
+      <div class="serv-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.8 19.6A2 2 0 1 0 14 16H2" /> <path d="M17.5 8a2.5 2.5 0 1 1 2 4H2" /> <path d="M9.8 4.4A2 2 0 1 1 11 8H2" /></svg></span>
+        <span>Climatização e ar-condicionado</span>
+      </div>
+      <div class="serv-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v2" /> <path d="M12 2v2" /> <path d="M17 20v2" /> <path d="M17 2v2" /> <path d="M2 12h2" /> <path d="M2 17h2" /> <path d="M2 7h2" /> <path d="M20 12h2" /> <path d="M20 17h2" /> <path d="M20 7h2" /> <path d="M7 20v2" /> <path d="M7 2v2" /> <rect x="4" y="4" width="16" height="16" rx="2" /> <rect x="8" y="8" width="8" height="8" rx="1" /></svg></span>
+        <span>Automação residencial</span>
+      </div>
+      <div class="serv-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /> <path d="M12 2v2" /> <path d="M12 20v2" /> <path d="m4.93 4.93 1.41 1.41" /> <path d="m17.66 17.66 1.41 1.41" /> <path d="M2 12h2" /> <path d="M20 12h2" /> <path d="m6.34 17.66-1.41 1.41" /> <path d="m19.07 4.93-1.41 1.41" /></svg></span>
+        <span>Energia solar</span>
+      </div>
+      <div class="serv-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 10v.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z" /> <path d="M7 16v6" /> <path d="M13 19v3" /> <path d="M12 19h8.3a1 1 0 0 0 .7-1.7L18 14h.3a1 1 0 0 0 .7-1.7L16 9h.2a1 1 0 0 0 .8-1.7L13 3l-1.4 1.5" /></svg></span>
+        <span>Paisagismo</span>
+      </div>
+      <div class="serv-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z" /> <path d="m2 22 3-3" /> <path d="M7.5 13.5 10 11" /> <path d="M10.5 16.5 13 14" /> <path d="m18 3-4 4h6l-4 4" /></svg></span>
+        <span>Carregadores para veículos elétricos</span>
+      </div>
+      <div class="serv-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0" /> <path d="M2 19q2.5 2 5 0t5 0 5 0 5 0" /> <path d="M2 5q2.5 2 5 0t5 0 5 0 5 0" /></svg></span>
+        <span>Piscinas</span>
+      </div>
+      <div class="serv-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /> <path d="m9 12 2 2 4-4" /></svg></span>
+        <span>Sistemas de segurança</span>
+      </div>
+      <div class="serv-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" /> <path d="M20 2v4" /> <path d="M22 4h-4" /> <circle cx="4" cy="20" r="2" /></svg></span>
+        <span>Limpeza e preparação pós-obra</span>
+      </div>
+      <div class="serv-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="6" x="2" y="2" rx="2" /> <path d="M10 16v-2a2 2 0 0 1 2-2h8a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" /> <rect width="4" height="6" x="8" y="16" rx="1" /></svg></span>
+        <span>Pintura</span>
+      </div>
+      <div class="serv-item filler">
+        <svg class="logo-mark" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" style="width:26px;height:auto;color:var(--muted-teal);"><path d="m1070.08 0h266.97l218.42 327.64 220.16 325.91-13.86 162.95-13.87 161.22-161.22 52.01-161.22 50.27-582.47-143.89c-320.71-78-610.21-154.28-641.42-166.42l-57.2-24.26v-324.18l268.7-176.82c149.08-95.35 283.11-167.47 294.7-175.09 33.73-22.19 87.24-50.66 95.34-53.74 31.59-12.01 119.62-15.6 266.97-15.6zm-269.99 23.18l-627 728.37 1585.46-106.43z"/></svg>
+        <span style="color:var(--white-smoke);">E se o que você precisa não está na lista, é só perguntar</span>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ============ DIFERENCIAL ============ -->
+<section class="diferencial slide-dark" id="diferencial" style="background-image: url('assets/images/diferencial-bg.jpg');">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Diferencial</p>
+      <h2>Por que o Facility facilita o seu projeto</h2>
+      <p>Mais do que apresentar produtos, buscamos entender a necessidade real de cada projeto e conectar você às soluções mais adequadas — da concepção até a entrega final, incluindo a limpeza e preparação do ambiente no pós-obra.</p>
+    </div>
+    <div class="pilares">
+      <div class="pilar"><span class="n">01</span><h4>Curadoria</h4><p>Selecionamos o que realmente faz sentido para o seu projeto</p></div>
+      <div class="pilar"><span class="n">02</span><h4>Relacionamento</h4><p>Anos de proximidade com fornecedores e parceiros</p></div>
+      <div class="pilar"><span class="n">03</span><h4>Acesso direto às fábricas</h4><p>Sem intermediários desnecessários</p></div>
+      <div class="pilar"><span class="n">04</span><h4>Condições comerciais</h4><p>Orçamentos mais competitivos</p></div>
+      <div class="pilar"><span class="n">05</span><h4>Soluções integradas</h4><p>Tudo conversando entre si, sem dor de cabeça</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARA QUEM É ============ -->
+<section class="publico-section" id="publico">
+  <div class="publico">
+    <div class="publico-col b2b">
+      <span class="tag"><span class="tag-fill"></span><span class="tag-label">B2B</span></span>
+      <h3>Arquitetos, designers de interiores, construtoras e incorporadoras</h3>
+      <p>Ganhe tempo e agilidade: conectamos você a fornecedores confiáveis e fortalecemos parcerias que geram novas oportunidades de negócio.</p>
+    </div>
+    <div class="publico-col b2c">
+      <span class="tag"><span class="tag-fill"></span><span class="tag-label">B2C</span></span>
+      <h3>Quem está planejando ou reformando um espaço</h3>
+      <p>Você não precisa entender de fornecedores, prazos e negociações — a gente cuida disso, para que seu projeto saia do papel com tranquilidade.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARCEIROS ============ -->
+<section class="parceiros" id="parceiros">
+  <div class="wrap parceiros-wrap">
+    <p class="eyebrow">Parceiros</p>
+    <h2 style="font-family:var(--serif); font-weight:400; font-size:clamp(1.6rem,2.6vw,2.2rem); max-width:56ch; margin:0 auto; line-height:1.4;">Uma rede de parceiros que cresce com cada projeto — arquitetos, designers, construtoras e incorporadoras.</h2>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="marquee-item">Parceiro 01</span>
+      <span class="marquee-item">Parceiro 02</span>
+      <span class="marquee-item">Parceiro 03</span>
+      <span class="marquee-item">Parceiro 04</span>
+      <span class="marquee-item">Parceiro 05</span>
+      <span class="marquee-item">Parceiro 06</span>
+      <span class="marquee-item">Parceiro 01</span>
+      <span class="marquee-item">Parceiro 02</span>
+      <span class="marquee-item">Parceiro 03</span>
+      <span class="marquee-item">Parceiro 04</span>
+      <span class="marquee-item">Parceiro 05</span>
+      <span class="marquee-item">Parceiro 06</span>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="regioes">
+      <span class="regiao-chip">Vale do Paraíba</span>
+      <span class="regiao-chip">Litoral</span>
+      <span class="regiao-chip">São Paulo</span>
+      <span class="regiao-chip">Estados Unidos</span>
+      <span class="regiao-chip">Itália</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJETOS ============ -->
+<section class="projetos slide-dark" id="projetos" style="background-image: url('assets/images/cta-bg.jpg');">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center; margin-left:auto; margin-right:auto;">
+      <p class="eyebrow">Projetos</p>
+      <h2>Projetos que já colocamos em movimento</h2>
+      <p>Uma amostra do tipo de ambiente que ajudamos a construir — em breve, com fotos dos projetos reais da Daniela.</p>
+    </div>
+  </div>
+
+  <div class="proj-masonry-wrap">
+    <div class="proj-masonry">
+      <div class="proj-tile" style="background-image: url('assets/images/hero-frame.jpg'); height: 280px;"></div>
+      <div class="proj-tile" style="background-image: url('assets/images/sobre.jpg'); height: 200px;"></div>
+      <div class="proj-tile" style="background-image: url('assets/images/diferencial-bg.jpg'); height: 340px;"></div>
+      <div class="proj-tile" style="background-image: url('assets/images/cta-bg.jpg'); height: 240px;"></div>
+      <div class="proj-tile" style="background-image: url('assets/images/hero-frame.jpg'); height: 190px;"></div>
+      <div class="proj-tile" style="background-image: url('assets/images/sobre.jpg'); height: 310px;"></div>
+      <div class="proj-tile" style="background-image: url('assets/images/diferencial-bg.jpg'); height: 230px;"></div>
+      <div class="proj-tile" style="background-image: url('assets/images/cta-bg.jpg'); height: 270px;"></div>
+      <div class="proj-tile" style="background-image: url('assets/images/hero-frame.jpg'); height: 210px;"></div>
+      <div class="proj-tile" style="background-image: url('assets/images/sobre.jpg'); height: 350px;"></div>
+      <div class="proj-tile" style="background-image: url('assets/images/diferencial-bg.jpg'); height: 260px;"></div>
+      <div class="proj-tile" style="background-image: url('assets/images/cta-bg.jpg'); height: 220px;"></div>
+      <div class="proj-tile" style="background-image: url('assets/images/hero-frame.jpg'); height: 280px;"></div>
+      <div class="proj-tile" style="background-image: url('assets/images/sobre.jpg'); height: 200px;"></div>
+      <div class="proj-tile" style="background-image: url('assets/images/diferencial-bg.jpg'); height: 340px;"></div>
+      <div class="proj-tile" style="background-image: url('assets/images/cta-bg.jpg'); height: 240px;"></div>
+      <div class="proj-tile" style="background-image: url('assets/images/hero-frame.jpg'); height: 190px;"></div>
+      <div class="proj-tile" style="background-image: url('assets/images/sobre.jpg'); height: 310px;"></div>
+      <div class="proj-tile" style="background-image: url('assets/images/diferencial-bg.jpg'); height: 230px;"></div>
+      <div class="proj-tile" style="background-image: url('assets/images/cta-bg.jpg'); height: 270px;"></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="proj-cta">
+      <a href="#brainstorm" class="btn-primary">Quero um projeto assim ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER / FORM ============ -->
+<footer class="rodape" id="brainstorm">
+  <div class="form-wrap">
+    <div class="form-head">
+      <svg class="logo-mark" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg"><path d="m1070.08 0h266.97l218.42 327.64 220.16 325.91-13.86 162.95-13.87 161.22-161.22 52.01-161.22 50.27-582.47-143.89c-320.71-78-610.21-154.28-641.42-166.42l-57.2-24.26v-324.18l268.7-176.82c149.08-95.35 283.11-167.47 294.7-175.09 33.73-22.19 87.24-50.66 95.34-53.74 31.59-12.01 119.62-15.6 266.97-15.6zm-269.99 23.18l-627 728.37 1585.46-106.43z"/></svg>
+      <h2>Brainstorm</h2>
+      <p>Conte um pouco sobre o seu projeto. Sem compromisso — é só o primeiro passo de uma conversa.</p>
+    </div>
+    <form class="brainstorm-form" onsubmit="event.preventDefault();">
+      <div class="field">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+      </div>
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+      </div>
+      <div class="field">
+        <label for="telefone">Telefone / WhatsApp</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+      </div>
+      <div class="field">
+        <label for="perfil">Você é</label>
+        <select id="perfil" name="perfil">
+          <option>Arquiteto(a)</option>
+          <option>Designer de interiores</option>
+          <option>Construtora ou incorporadora</option>
+          <option>Pessoa física</option>
+          <option>Outro</option>
+        </select>
+      </div>
+      <div class="field full">
+        <label for="estagio">Em que estágio está o seu projeto?</label>
+        <select id="estagio" name="estagio">
+          <option>Ainda planejando</option>
+          <option>Já em obra</option>
+          <option>Buscando fornecedores específicos</option>
+        </select>
+      </div>
+      <div class="field full">
+        <label for="mensagem">Conte um pouco do que você precisa</label>
+        <textarea id="mensagem" name="mensagem" placeholder="Descreva brevemente seu projeto..."></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Enviar e começar a conversa</button>
+    </form>
+    <p class="form-note">Assim que você enviar, entramos em contato o quanto antes pelo WhatsApp ou e-mail — o que for mais confortável pra você.</p>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <span class="brand" style="font-size:1rem;">Ballabio Design</span>
+    <span>© 2026 Ballabio Design — serviço Facility. Todos os direitos reservados.</span>
+  </div>
+</footer>
+
+<!-- ============ LIGHTBOX (preview de projetos) ============ -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-btn lightbox-close" id="lightboxClose" aria-label="Fechar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+  </button>
+  <button class="lightbox-btn lightbox-prev" id="lightboxPrev" aria-label="Foto anterior">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+  </button>
+  <button class="lightbox-btn lightbox-next" id="lightboxNext" aria-label="Próxima foto">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+  </button>
+  <div class="lightbox-content">
+    <img class="lightbox-img" id="lightboxImg" src="" alt="Prévia do projeto">
+  </div>
+</div>
+
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Header em glassmorphism (vidro escuro + logo/botão brancos) enquanto ainda está no topo da página
+  var topNav = document.querySelector(".topnav");
+  function updateNavState() {
+    if (window.scrollY < 60) {
+      topNav.classList.add("at-top");
+    } else {
+      topNav.classList.remove("at-top");
+    }
+  }
+  updateNavState();
+  window.addEventListener("scroll", updateNavState, { passive: true });
+
+  // Menu off-canvas
+  (function () {
+    var toggle = document.getElementById("menuToggle");
+    var menu = document.getElementById("offcanvasMenu");
+    var backdrop = document.getElementById("offcanvasBackdrop");
+    var closeBtn = document.getElementById("offcanvasClose");
+    var links = document.querySelectorAll(".offcanvas-link, .offcanvas-cta");
+
+    function openMenu() {
+      toggle.classList.add("is-open");
+      menu.classList.add("is-open");
+      backdrop.classList.add("is-open");
+      toggle.setAttribute("aria-expanded", "true");
+      menu.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeMenu() {
+      toggle.classList.remove("is-open");
+      menu.classList.remove("is-open");
+      backdrop.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      menu.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    toggle.addEventListener("click", function () {
+      if (menu.classList.contains("is-open")) closeMenu(); else openMenu();
+    });
+    closeBtn.addEventListener("click", closeMenu);
+    backdrop.addEventListener("click", closeMenu);
+    links.forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && menu.classList.contains("is-open")) closeMenu();
+    });
+  })();
+
+  // Parallax da foto de fundo compartilhada entre Hero, Sobre e Serviços:
+  // a imagem fica fixa na tela (tamanho de 1 viewport, sem esticar) enquanto o conteúdo rola por cima —
+  // isso preserva a proporção natural da foto e cria um parallax leve e clássico.
+  // Fica visível apenas enquanto o bloco Hero+Sobre+Serviços está na tela.
+  (function () {
+    var bg = document.querySelector(".parallax-bg");
+    var wrapper = document.querySelector(".hero-sobre-parallax");
+    function updateParallaxVisibility() {
+      var rect = wrapper.getBoundingClientRect();
+      var isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+      bg.classList.toggle("is-active", isVisible);
+    }
+    updateParallaxVisibility();
+    window.addEventListener("scroll", updateParallaxVisibility, { passive: true });
+    window.addEventListener("resize", updateParallaxVisibility);
+  })();
+
+  // Efeito "grow up" no card inteiro ao passar o mouse (Serviços)
+  document.querySelectorAll('.serv-item').forEach(function (card) {
+    card.addEventListener('mouseenter', function () {
+      card.style.zIndex = 2;
+      if (window.gsap) {
+        gsap.to(card, {
+          scale: 1.08,
+          boxShadow: "0 20px 40px rgba(35,36,33,0.25)",
+          duration: 0.35,
+          ease: "back.out(1.7)"
+        });
+      } else {
+        card.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
+        card.style.transform = "scale(1.08)";
+        card.style.boxShadow = "0 20px 40px rgba(35,36,33,0.25)";
+      }
+    });
+    card.addEventListener('mouseleave', function () {
+      if (window.gsap) {
+        gsap.to(card, {
+          scale: 1,
+          boxShadow: "0 0px 0px rgba(35,36,33,0)",
+          duration: 0.3,
+          ease: "power2.out",
+          onComplete: function () { card.style.zIndex = ""; }
+        });
+      } else {
+        card.style.transform = "scale(1)";
+        card.style.boxShadow = "none";
+        card.style.zIndex = "";
+      }
+    });
+  });
+
+  // Efeito "levantar" ao passar o mouse (Diferencial — pilares)
+  document.querySelectorAll('.pilar').forEach(function (pilar) {
+    pilar.addEventListener('mouseenter', function () {
+      if (window.gsap) {
+        gsap.to(pilar, { y: -10, duration: 0.2, ease: "power2.out" });
+      } else {
+        pilar.style.transition = "transform 0.2s ease";
+        pilar.style.transform = "translateY(-10px)";
+      }
+    });
+    pilar.addEventListener('mouseleave', function () {
+      if (window.gsap) {
+        gsap.to(pilar, { y: 0, duration: 0.2, ease: "power2.out" });
+      } else {
+        pilar.style.transform = "translateY(0)";
+      }
+    });
+  });
+
+  // Barra "B2B / B2C" carrega como progress bar ao entrar na tela
+  var publicoSection = document.querySelector(".publico-section");
+  if (publicoSection) {
+    var tagFills = publicoSection.querySelectorAll(".tag-fill");
+    var played = false;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && !played) {
+          played = true;
+          tagFills.forEach(function (fill, i) {
+            if (window.gsap) {
+              gsap.to(fill, {
+                scaleX: 1,
+                duration: 0.9,
+                ease: "power2.out",
+                delay: i * 0.15
+              });
+            } else {
+              setTimeout(function () {
+                fill.style.transition = "transform 0.9s ease";
+                fill.style.transform = "scaleX(1)";
+              }, i * 150);
+            }
+          });
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.35 });
+    observer.observe(publicoSection);
+  }
+
+  // Galeria de projetos (pirâmide): hover levanta e destaca o tile
+  document.querySelectorAll('.proj-tile').forEach(function (tile) {
+    tile.addEventListener('mouseenter', function () {
+      tile.style.zIndex = 3;
+      if (window.gsap) {
+        gsap.to(tile, {
+          y: -14,
+          scale: 1.12,
+          boxShadow: "inset 0 0 0 1.5px rgba(245,245,244,0.5), 0 20px 34px rgba(0,0,0,0.5)",
+          duration: 0.25,
+          ease: "power2.out"
+        });
+      } else {
+        tile.style.transition = "transform 0.25s ease, box-shadow 0.25s ease";
+        tile.style.transform = "translateY(-14px) scale(1.12)";
+      }
+    });
+    tile.addEventListener('mouseleave', function () {
+      if (window.gsap) {
+        gsap.to(tile, {
+          y: 0,
+          scale: 1,
+          boxShadow: "inset 0 0 0 1px rgba(245,245,244,0.18), 0 8px 20px rgba(0,0,0,0.35)",
+          duration: 0.25,
+          ease: "power2.out",
+          onComplete: function () { tile.style.zIndex = ""; }
+        });
+      } else {
+        tile.style.transform = "translateY(0) scale(1)";
+        tile.style.zIndex = "";
+      }
+    });
+  });
+
+  // Lightbox: clique numa foto do mosaico abre o preview em modal
+  (function () {
+    var tiles = Array.prototype.slice.call(document.querySelectorAll('.proj-tile'));
+    if (!tiles.length) return;
+
+    var urls = tiles.map(function (tile) {
+      var bg = getComputedStyle(tile).backgroundImage;
+      var match = bg.match(/url\(["']?(.*?)["']?\)/);
+      return match ? match[1] : "";
+    });
+
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightboxImg');
+    var btnClose = document.getElementById('lightboxClose');
+    var btnPrev = document.getElementById('lightboxPrev');
+    var btnNext = document.getElementById('lightboxNext');
+    var currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      lightboxImg.src = urls[currentIndex];
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % urls.length;
+      lightboxImg.src = urls[currentIndex];
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + urls.length) % urls.length;
+      lightboxImg.src = urls[currentIndex];
+    }
+
+    tiles.forEach(function (tile, i) {
+      tile.addEventListener('click', function () { openLightbox(i); });
+    });
+
+    btnClose.addEventListener('click', closeLightbox);
+    btnNext.addEventListener('click', showNext);
+    btnPrev.addEventListener('click', showPrev);
+
+    // clique fora da imagem fecha
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    // navegação e fechamento via teclado
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') showNext();
+      if (e.key === 'ArrowLeft') showPrev();
+    });
+  })();
+</script>
+
+</body>
+</html>
