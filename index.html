@@ -1066,8 +1066,6 @@
       for (var k = 0; k < dots.length; k++) {
         if (k === idx) dots[k].setAttribute('aria-current', 'true'); else dots[k].removeAttribute('aria-current');
       }
-      btnPrev.disabled = idx <= 0;
-      btnNext.disabled = idx >= positions() - 1;
     }
 
     var ticking = false;
@@ -1076,8 +1074,35 @@
       ticking = true;
       requestAnimationFrame(function () { ticking = false; update(); });
     });
-    btnPrev.addEventListener('click', function () { goTo(index() - 1); });
-    btnNext.addEventListener('click', function () { goTo(index() + 1); });
+
+    // Setas em loop infinito: depois do último vídeo volta ao primeiro, e antes do primeiro vai ao último.
+    // A volta não rola por cima dos vídeos do meio (isso carregaria embeds do Instagram à toa): o slider some
+    // rapidamente (fade), salta direto para o destino e reaparece.
+    var wrapping = false;
+    function wrapTo(i) {
+      if (wrapping) return;
+      wrapping = true;
+      var fade = OBRAS_SCROLL_BEHAVIOR === 'smooth' ? 220 : 0;
+      track.classList.add('is-wrapping');
+      setTimeout(function () {
+        track.scrollTo({ left: i * step(), behavior: 'auto' });
+        update();
+        requestAnimationFrame(function () {
+          track.classList.remove('is-wrapping');
+          setTimeout(function () { wrapping = false; }, fade);
+        });
+      }, fade);
+    }
+    function goNext() {
+      var i = index();
+      if (i >= positions() - 1) wrapTo(0); else goTo(i + 1);
+    }
+    function goPrev() {
+      var i = index();
+      if (i <= 0) wrapTo(positions() - 1); else goTo(i - 1);
+    }
+    btnPrev.addEventListener('click', goPrev);
+    btnNext.addEventListener('click', goNext);
 
     function relayout() {
       buildDots();
