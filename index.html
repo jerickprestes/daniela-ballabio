@@ -309,10 +309,14 @@
     <div class="proj-masonry">
 
     </div>
-  </div>
 
-  <div class="wrap proj-loadmore-wrap">
-    <button type="button" id="loadMoreProjects" class="btn-primary proj-loadmore-btn">Carregar mais fotos</button>
+    <!-- Degradê azul sobre a última fileira + botão: aparece sempre que ainda há fotos a carregar -->
+    <div class="proj-fade" id="projFade">
+      <button type="button" id="loadMoreProjects" class="btn-primary proj-loadmore-btn">
+        <span class="proj-loadmore-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"/><line x1="16" x2="22" y1="5" y2="5"/><line x1="19" x2="19" y1="2" y2="8"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></span>
+        Carregar mais fotos
+      </button>
+    </div>
   </div>
 
   <div class="wrap proj-purpose">
@@ -790,7 +794,8 @@
       }
       loadedCount = end;
       if (loadedCount >= PROJECT_PHOTOS.length) {
-        loadMoreBtn.style.display = 'none';
+        var fade = document.getElementById('projFade');
+        if (fade) fade.classList.add('is-done'); // some o degradê junto com o botão: não há mais fotos
       }
     }
 
