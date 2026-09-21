@@ -339,19 +339,17 @@
     width: 100%;
     aspect-ratio: 16 / 9;
   }
-  .hero-frame .clip-photo {
+  /* logo dourado (WebP com transparência) centralizado na caixa 16:9, sem cortar */
+  .hero-frame .hero-logo-gold {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    clip-path: url(#facilityClip);
-    background: rgba(245,245,244,0.14);
-    backdrop-filter: blur(22px) saturate(180%);
-    -webkit-backdrop-filter: blur(22px) saturate(180%);
-    box-shadow: inset 0 0 0 2px rgba(245,245,244,0.4);
+    object-fit: contain;
+    /* filter: drop-shadow(0 14px 28px rgba(0,0,0,0.45)); */
   }
 
-  /* ============ HERO RADIAL (diagrama com logo em glassmorphism + serviços em órbita) ============ */
+  /* ============ HERO RADIAL (diagrama com o logo dourado ao centro) ============ */
   .hero-radial-section {
     display: flex;
     flex-direction: column;
@@ -387,7 +385,7 @@
     z-index: 5;
   }
   .orbit-center::before {
-    content: "";
+    /* content: ""; */
     position: absolute;
     inset: 8%;
     background: rgba(0,0,0,0.4);
@@ -408,8 +406,7 @@
     pointer-events: none;
     filter: drop-shadow(0 4px 16px rgba(0,0,0,0.55));
   }
-  .orbit-center-brand .logo-mark { width: 42px; height: auto; color: var(--white-smoke); }
-  .orbit-center-brand .orbit-center-wordmark { height: 11px; width: auto; max-width: 360px; }
+  .orbit-center-brand .orbit-center-wordmark { height: 19px; width: auto; max-width: 90vw; }
   .orbit-center .hero-frame { position: relative; width: 100%; height: 100%; }
   .orbit-items { position: absolute; inset: 0; }
   .orbit-pill {
@@ -477,7 +474,7 @@
   }
   .servicos-diagram .orbit-center { width: 360px; }
 
-  .hero-radial-text { text-align: center; max-width: 640px; margin-top: 1.5rem; }
+  .hero-radial-text { text-align: center; max-width: 820px; width: 100%; margin-top: 1.5rem; }
   .hero-radial-text .eyebrow { font-size: 0.7rem; color: var(--muted-teal); margin-bottom: 0.5rem; }
   .hero-radial-text h1 {
     font-family: var(--serif);
@@ -489,6 +486,9 @@
   }
   .hero-radial-text h1 em { font-style: italic; color: var(--muted-teal); }
   .hero-radial-text .lead { font-size: 0.85rem; color: rgba(216,223,230,0.7); line-height: 1.55; margin: 0; }
+  /* Especificidade maior que `.hero p.lead` (regra da hero antiga, max-width: 44ch e margin: 0 0 2rem):
+     sem isso o parágrafo ficava preso a 44ch e colado à esquerda do container, desalinhado do logo e do título. */
+  .hero .hero-radial-text p.lead { max-width: none; margin: 0 auto 2rem; }
 
   .mobile-orbit-list { display: none; }
   .mobile-service-list { display: none; }
@@ -505,11 +505,15 @@
     background: #25D366;
     color: #ffffff;
     text-decoration: none;
+    border: 0;
+    font: inherit;
+    cursor: pointer;
     padding: 0.85rem 1.3rem 0.85rem 0.85rem;
     border-radius: 999px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.35);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
+  .whatsapp-fab:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
   .whatsapp-fab:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(0,0,0,0.4); }
   .whatsapp-fab-icon { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .whatsapp-fab-icon svg { width: 100%; height: 100%; fill: #ffffff; }
@@ -524,7 +528,7 @@
     flex-direction: column;
     justify-content: center;
   }
-  .section-head { max-width: 640px; margin: 0 0 3rem; }
+  .section-head { max-width: 820px; margin: 0 0 3rem; }
   .section-head h2 {
     font-family: var(--serif);
     font-weight: 400;
@@ -696,7 +700,7 @@
     font-size: 1.02rem;
     line-height: 1.7;
     color: var(--alabaster-grey);
-    max-width: 60ch;
+    max-width: 78ch;
     margin: -1.5rem 0 3rem;
   }
   .serv-grid {
@@ -833,7 +837,17 @@
   /* ============ PARCEIROS ============ */
   /* ============ PARCEIROS ============ */
   .parceiros { min-height: 50vh; }
-  .parceiros-wrap { text-align: center; }
+  .parceiros-wrap { text-align: center; max-width: none; padding: 0 5vw; }
+  /* Texto de abertura da seção: largura maior + corpo menor para caber em ~5 linhas no desktop */
+  .parceiros-lead {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(1.1rem, 1.75vw, 1.6rem);
+    line-height: 1.4;
+    max-width: 1300px;
+    margin: 0 auto;
+    text-wrap: balance;
+  }
   .marquee {
     margin-top: 3rem;
     overflow: hidden;
@@ -934,6 +948,27 @@
     margin-bottom: 0.9rem;
   }
 
+  .proj-purpose {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+  }
+  .proj-purpose-text {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    line-height: 1.55;
+    color: var(--white-smoke);
+    margin: 0 0 0.8rem;
+  }
+  .proj-purpose-emphasis {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    color: var(--muted-teal);
+    margin: 0;
+  }
+
   .proj-cta { text-align: center; }
   .proj-cta .btn-primary {
     background: var(--sage-green);
@@ -952,6 +987,323 @@
   .proj-loadmore-btn:hover {
     background: rgba(245,245,244,0.12);
     border-color: var(--white-smoke);
+  }
+
+  /* ============ GALERIA DE OBRAS ============ */
+  .obras {
+    min-height: 0;
+    display: block;
+    background: var(--white-smoke);
+    padding: 6rem 5vw;
+  }
+  .obras-inner { max-width: 1400px; margin: 0 auto; }
+  .obras-head { text-align: center; margin: 0 auto 2.8rem; }
+  .obras-head p:not(.eyebrow) { max-width: 56ch; margin-left: auto; margin-right: auto; }
+
+  /* Abaixo de 1360px os dois containers ficam um sobre o outro; acima, lado a lado.
+     A coluna dos vídeos (724px) garante ~335px por vídeo — o embed do Instagram exige no mínimo ~326px. */
+  .obras-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.8rem; align-items: start; }
+  .obras-card {
+    width: 100%;
+    min-width: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 1.2rem;
+    background: #fff;
+    border: 1px solid rgba(13,27,42,0.08);
+    border-radius: 16px;
+    box-shadow: 0 12px 34px rgba(13,27,42,0.08);
+  }
+  .obras-fotos { max-width: 900px; }
+  .obras-videos { max-width: 780px; }
+  @media (min-width: 1360px) {
+    .obras-grid { grid-template-columns: minmax(0, 1fr) 724px; gap: 2rem; }
+    .obras-fotos, .obras-videos { max-width: none; }
+  }
+
+  .obras-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 40px;
+    margin: 0 0 1rem;
+  }
+  .obras-card-head h3 {
+    margin: 0;
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--deep-teal);
+  }
+  .obras-count { font-size: 0.8rem; color: var(--deep-teal); font-variant-numeric: tabular-nums; }
+  .obras-ctrls { display: flex; align-items: center; gap: 0.5rem; }
+  .obras-ctrls[hidden], .vd-dots[hidden] { display: none; }
+
+  .obras-arrow {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(13,27,42,0.18);
+    background: #fff;
+    color: var(--carbon-black);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+  }
+  .obras-arrow svg { width: 18px; height: 18px; }
+  .obras-arrow:hover:not(:disabled) { background: var(--carbon-black); color: var(--white-smoke); border-color: var(--carbon-black); }
+  .obras-arrow:disabled { opacity: 0.35; cursor: default; }
+  .obras-arrow:focus-visible,
+  .ph-thumb:focus-visible,
+  .vd-dot:focus-visible,
+  .ph-track:focus-visible { outline: 2px solid var(--sage-green); outline-offset: 2px; }
+
+  /* ---- Slider de fotos ---- */
+  .ph-stage { position: relative; border-radius: 12px; overflow: hidden; background: var(--carbon-black); }
+  .ph-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .ph-track::-webkit-scrollbar { display: none; }
+  /* A foto aparece inteira (object-fit: contain), pois as fotos de obra misturam retrato e paisagem;
+     as sobras dos lados/topo são preenchidas por uma versão desfocada da própria foto. */
+  .ph-slide {
+    position: relative;
+    flex: 0 0 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    scroll-snap-align: start;
+    cursor: zoom-in;
+  }
+  .ph-slide::before {
+    content: '';
+    position: absolute;
+    inset: -30px;
+    background: var(--bg) center / cover no-repeat;
+    filter: blur(22px) brightness(0.72);
+  }
+  .ph-slide img { position: relative; width: 100%; height: 100%; object-fit: contain; -webkit-user-drag: none; }
+
+  /* Lado a lado: os dois cards têm a mesma altura (a do card de vídeos, cuja altura vem do embed do Instagram);
+     o slider de fotos preenche o espaço que sobrar. */
+  @media (min-width: 1360px) {
+    .obras-grid { align-items: stretch; }
+    .obras-fotos { display: flex; flex-direction: column; }
+    .obras-fotos .ph-stage { flex: 1 1 0; min-height: 320px; display: flex; flex-direction: column; }
+    .obras-fotos .ph-track { flex: 1; }
+    .obras-fotos .ph-slide { aspect-ratio: auto; }
+  }
+  .ph-stage .obras-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(13,27,42,0.55);
+    color: var(--white-smoke);
+    border-color: rgba(245,245,244,0.35);
+    backdrop-filter: blur(4px);
+  }
+  .ph-stage .obras-arrow:disabled { opacity: 0; pointer-events: none; }
+  .obras-arrow-prev { left: 0.8rem; }
+  .obras-arrow-next { right: 0.8rem; }
+
+  .ph-thumbs {
+    position: relative; /* referência do offsetLeft usado para centralizar a miniatura ativa */
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 0.9rem;
+    padding: 4px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(13,27,42,0.25) transparent;
+  }
+  .ph-thumb {
+    flex: 0 0 92px;
+    aspect-ratio: 3 / 2;
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--alabaster-grey);
+    cursor: pointer;
+    opacity: 0.55;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    transition: opacity 0.2s ease, outline-color 0.2s ease;
+  }
+  .ph-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .ph-thumb:hover { opacity: 0.85; }
+  .ph-thumb[aria-current="true"] { opacity: 1; outline-color: var(--sage-green); }
+
+  /* ---- Slider de vídeos (2 por vez; 1 por vez no celular) ---- */
+  .vd-track {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .vd-track::-webkit-scrollbar { display: none; }
+  .vd-item { flex: 0 0 calc((100% - 1rem) / 2); min-width: 0; scroll-snap-align: start; }
+  .vd-frame {
+    position: relative;
+    aspect-ratio: 9 / 16.8; /* valor de partida, próximo da altura real do embed; o JS ajusta com a medida do Instagram */
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--alabaster-grey);
+    border: 1px solid rgba(13,27,42,0.08);
+  }
+  .vd-frame::before {
+    content: 'Carregando vídeo…';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: var(--deep-teal);
+  }
+  .vd-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: transparent; }
+  .vd-link {
+    display: block;
+    margin-top: 0.6rem;
+    text-align: center;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--deep-teal);
+    text-decoration: none;
+  }
+  .vd-link:hover { color: var(--carbon-black); text-decoration: underline; }
+  .vd-dots { display: flex; justify-content: center; gap: 0.6rem; margin-top: 1rem; }
+  .vd-dot {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(13,27,42,0.2);
+    cursor: pointer;
+    transition: width 0.25s ease, background 0.25s ease;
+  }
+  .vd-dot::after { content: ''; position: absolute; inset: -10px; } /* área de toque maior */
+  .vd-dot[aria-current="true"] { width: 22px; background: var(--sage-green); }
+
+  @media (max-width: 900px) {
+    .obras { padding-left: 3vw; padding-right: 3vw; }
+  }
+  @media (max-width: 760px) {
+    .obras { padding: 4rem 3.5vw; }
+    .obras-card { padding: 0.8rem; border-radius: 14px; }
+    .vd-item { flex-basis: 100%; }
+    .ph-thumb { flex-basis: 68px; }
+    .ph-slide { aspect-ratio: 1 / 1; }
+    .ph-stage .obras-arrow { width: 36px; height: 36px; }
+  }
+
+  /* ============ CONTATO: FORMULÁRIO OFF-CANVAS (abre de baixo para cima) ============ */
+  .contact-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 110; /* acima do botão flutuante (60) e do menu lateral (95); abaixo do lightbox (200) */
+    background: rgba(13,27,42,0.62);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0s linear 0.4s;
+  }
+  .contact-backdrop.is-open { opacity: 1; visibility: visible; transition-delay: 0s; }
+
+  .contact-drawer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 111;
+    width: min(760px, 100%);
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    max-height: 92vh;
+    max-height: 92dvh;
+    background: var(--carbon-black);
+    color: var(--white-smoke);
+    border-radius: 22px 22px 0 0;
+    box-shadow: 0 -18px 60px rgba(0,0,0,0.5);
+    transform: translateY(100%); /* fechado: escondido abaixo da tela */
+    visibility: hidden;
+    transition: transform 0.5s cubic-bezier(0.22, 0.8, 0.24, 1), visibility 0s linear 0.5s;
+    outline: none;
+  }
+  .contact-drawer.is-open { transform: translateY(0); visibility: visible; transition-delay: 0s; }
+  /* alça visual no topo, indicando que é um painel que desce */
+  .contact-drawer::before {
+    content: "";
+    position: absolute;
+    top: 0.7rem;
+    left: 50%;
+    width: 44px;
+    height: 4px;
+    margin-left: -22px;
+    border-radius: 999px;
+    background: rgba(245,245,244,0.28);
+  }
+  .contact-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(245,245,244,0.35);
+    background: transparent;
+    color: var(--white-smoke);
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .contact-close svg { width: 18px; height: 18px; }
+  .contact-close:hover { background: rgba(245,245,244,0.14); border-color: var(--white-smoke); }
+  .contact-close:focus-visible,
+  .contact-drawer .field input:focus-visible,
+  .contact-drawer .field select:focus-visible,
+  .contact-drawer .field textarea:focus-visible,
+  .contact-drawer .submit-btn:focus-visible { outline: 2px solid var(--sage-green); outline-offset: 2px; }
+  .contact-scroll {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 2.6rem 2rem calc(2rem + env(safe-area-inset-bottom, 0px));
+  }
+  /* dentro do painel o cabeçalho fica mais compacto para o formulário caber sem rolar em telas maiores */
+  .contact-drawer .form-head { margin-bottom: 1.6rem; }
+  .contact-drawer .form-head h2 { font-size: 1.7rem; }
+
+  @media (max-width: 900px) {
+    .contact-drawer { width: 100%; border-radius: 18px 18px 0 0; }
+    .contact-scroll { padding: 2.4rem 1rem calc(1.4rem + env(safe-area-inset-bottom, 0px)); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .contact-drawer, .contact-backdrop { transition-duration: 0.01s; }
   }
 
   /* ============ LIGHTBOX ============ */
@@ -1024,7 +1376,6 @@
 
   /* ============ FOOTER / FORM ============ */
   footer.rodape {
-    min-height: 100vh;
     box-sizing: border-box;
     background: var(--carbon-black);
     color: var(--white-smoke);
@@ -1089,6 +1440,19 @@
     margin-top: 1.2rem;
   }
 
+  .footer-tagline {
+    text-align: center;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    line-height: 1.6;
+    color: var(--white-smoke);
+  }
+  .footer-tagline em {
+    font-style: italic;
+    color: var(--muted-teal);
+  }
+
   .footer-bottom {
     margin-top: 4rem;
     padding-top: 2rem;
@@ -1114,14 +1478,11 @@
     .hero-radial-wrap::before {
       content: "";
       display: block;
-      width: 90px;
-      aspect-ratio: 16 / 9;
+      width: 120px;
+      aspect-ratio: 1000 / 660;
       margin: 0 auto 2rem;
-      clip-path: url(#facilityClip);
-      background: rgba(245,245,244,0.14);
-      backdrop-filter: blur(18px) saturate(180%);
-      -webkit-backdrop-filter: blur(18px) saturate(180%);
-      box-shadow: inset 0 0 0 2px rgba(245,245,244,0.5);
+      background: url("assets/images/logo-ballabio-gold.webp") center / contain no-repeat;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.45));
     }
     .mobile-orbit-list {
       display: flex;
