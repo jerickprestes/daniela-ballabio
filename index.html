@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Ballabio Arquitetura & Design</title>
+<link rel="icon" href="assets/images/favicon.ico" sizes="48x48">
+<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<!-- Logo symbol reutilizável -->
+<template id="logo-svg">
+  <svg viewBox="0 0 1920 1080" class="logo-mark" xmlns="http://www.w3.org/2000/svg">
+    <path d="m1070.08 0h266.97l218.42 327.64 220.16 325.91-13.86 162.95-13.87 161.22-161.22 52.01-161.22 50.27-582.47-143.89c-320.71-78-610.21-154.28-641.42-166.42l-57.2-24.26v-324.18l268.7-176.82c149.08-95.35 283.11-167.47 294.7-175.09 33.73-22.19 87.24-50.66 95.34-53.74 31.59-12.01 119.62-15.6 266.97-15.6zm-269.99 23.18l-627 728.37 1585.46-106.43z"/>
+  </svg>
+</template>
+
+<!-- ============ NAV ============ -->
+<nav class="topnav">
+  <div class="brand">
+    <svg class="logo-mark" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg"><path d="m1070.08 0h266.97l218.42 327.64 220.16 325.91-13.86 162.95-13.87 161.22-161.22 52.01-161.22 50.27-582.47-143.89c-320.71-78-610.21-154.28-641.42-166.42l-57.2-24.26v-324.18l268.7-176.82c149.08-95.35 283.11-167.47 294.7-175.09 33.73-22.19 87.24-50.66 95.34-53.74 31.59-12.01 119.62-15.6 266.97-15.6zm-269.99 23.18l-627 728.37 1585.46-106.43z"/></svg>
+    <span class="brand-text">DANIELA BALLABIO - ARQUITETURA e DESIGN</span>
+  </div>
+  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="offcanvasMenu">
+    <span class="menu-toggle-bar"></span>
+    <span class="menu-toggle-bar"></span>
+    <span class="menu-toggle-bar"></span>
+  </button>
+</nav>
+
+<!-- ============ MENU OFF-CANVAS ============ -->
+<div class="offcanvas-backdrop" id="offcanvasBackdrop"></div>
+<aside class="offcanvas-menu" id="offcanvasMenu" aria-hidden="true">
+  <button class="offcanvas-close" id="offcanvasClose" aria-label="Fechar menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+  </button>
+  <nav class="offcanvas-links">
+    <a href="#hero" class="offcanvas-link"><span class="offcanvas-num">01</span>Início</a>
+    <a href="#sobre" class="offcanvas-link"><span class="offcanvas-num">02</span>Sobre</a>
+    <a href="#servicos" class="offcanvas-link"><span class="offcanvas-num">03</span>Serviços</a>
+    <a href="#diferencial" class="offcanvas-link"><span class="offcanvas-num">04</span>Diferencial</a>
+    <a href="#publico" class="offcanvas-link"><span class="offcanvas-num">05</span>Para quem é</a>
+    <a href="#parceiros" class="offcanvas-link"><span class="offcanvas-num">06</span>Parceiros</a>
+    <a href="#projetos" class="offcanvas-link"><span class="offcanvas-num">07</span>Projetos</a>
+    <a href="#galeria-obras" class="offcanvas-link"><span class="offcanvas-num">08</span>Vídeos das obras</a>
+  </nav>
+  <a href="#contactDrawer" data-open-contact aria-haspopup="dialog" aria-controls="contactDrawer" class="btn-primary offcanvas-cta">Entre em contato</a>
+</aside>
+
+<header class="hero hero-radial-section" id="hero">
+    <div class="hero-radial-wrap">
+
+      <!-- Composição da hero: logo dourado, nome e slogan centralizados -->
+      <div class="hero-radial-diagram">
+        <div class="orbit-center">
+          <div class="hero-frame">
+            <img class="hero-logo-gold" src="assets/images/logo-ballabio-gold.webp" alt="" aria-hidden="true" width="1000" height="660">
+          </div>
+        </div>
+
+        <!-- Título em texto (Encode Sans Expanded 100): a linha 1 é maior para ter a mesma largura da linha 2 -->
+        <p class="hero-brand">
+          <span class="hero-brand-l1">Ballabio</span>
+          <span class="hero-brand-l2">Arquitetura &amp; Design</span>
+        </p>
+
+        <div class="hero-radial-text">
+          <h1>Arquitetura para viver <em>com leveza</em></h1>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+<!-- ============ RENDER EM DESTAQUE ============ -->
+<section class="destaque" id="destaque" aria-label="Render em destaque">
+  <div class="gal-inner">
+      <div class="gal gal--light gal--wide" data-gallery="destaque" data-label="Render em destaque" role="region" aria-roledescription="carrossel" aria-label="Render em destaque">
+        <div class="gal-head">
+          <h3>Render em destaque</h3>
+          <div class="gal-ctrls">
+            <button type="button" class="gal-arrow" data-dir="-1" aria-label="Anterior: Render em destaque"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+            <button type="button" class="gal-arrow" data-dir="1" aria-label="Próximo: Render em destaque"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+          </div>
+        </div>
+        <div class="gal-track" tabindex="0" aria-label="Render em destaque. Arraste ou use as setas do teclado."></div>
+      </div>
+  </div>
+</section>
+
+<!-- ============ SOBRE ============ -->
+<section class="sobre-section" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="sobre-text">
+      <div class="section-head">
+        <p class="eyebrow">Sobre o Gerenciamento de Obras</p>
+        <h2>Como trabalhamos</h2>
+      </div>
+      <div class="sobre-copy">
+        <p>Nosso trabalho consiste em transformar ideias em espaços reais que traduzem a essência de cada cliente.</p>
+        <p>A partir da escuta atenta a suas necessidades, desejos e expectativas, desenvolvemos soluções que unem facilidade, inovação e estética.</p>
+        <p>Nosso trabalho é filtrar e interpretar. Lapidar tudo aquilo que você nos traz, transformando referências e desejos em projeto coerente, personalizado e atemporal. O resultado é uma arquitetura pensada para acolher a vida com leveza, conforto, funcionalidade e harmonia.</p>
+      </div>
+    </div>
+    <aside class="servico" aria-labelledby="servico-title">
+      <h3 id="servico-title">Gerenciamento de Obras</h3>
+      <ul class="servico-lista">
+        <li>Projetos Arquitetônicos e Urbanísticos</li>
+        <li>Design de interiores</li>
+        <li>Paisagismo</li>
+        <li>Regularização diária e ambiental</li>
+      </ul>
+      <div class="servico-rodape">
+        <span class="servico-valor">Sob orçamento</span>
+        <a href="#contactDrawer" data-open-contact aria-haspopup="dialog" aria-controls="contactDrawer" class="btn-primary">Entre em contato</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ SERVIÇOS ============ -->
+<section class="servicos slide-dark" id="servicos">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Serviços / portfólio</p>
+      <h2>Tudo que seu projeto pode precisar, em um só lugar</h2>
+    </div>
+    <p class="serv-intro">Trabalhamos direto com fábricas e fornecedores especializados, o que significa condições comerciais diferenciadas e orçamentos mais competitivos para você, sem abrir mão da qualidade.</p>
+    <div class="serv-grid">
+      <div class="serv-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3" /> <path d="M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z" /> <path d="M5 18v2" /> <path d="M19 18v2" /></svg></span>
+        <span>Móveis planejados</span>
+      </div>
+      <div class="serv-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z" /> <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" /> <circle cx="17.5" cy="10.5" r=".5" fill="currentColor" /> <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" /> <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" /></svg></span>
+        <span>Decoração e revestimentos</span>
+      </div>
+      <div class="serv-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.8 19.6A2 2 0 1 0 14 16H2" /> <path d="M17.5 8a2.5 2.5 0 1 1 2 4H2" /> <path d="M9.8 4.4A2 2 0 1 1 11 8H2" /></svg></span>
+        <span>Climatização e ar-condicionado</span>
+      </div>
+      <div class="serv-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v2" /> <path d="M12 2v2" /> <path d="M17 20v2" /> <path d="M17 2v2" /> <path d="M2 12h2" /> <path d="M2 17h2" /> <path d="M2 7h2" /> <path d="M20 12h2" /> <path d="M20 17h2" /> <path d="M20 7h2" /> <path d="M7 20v2" /> <path d="M7 2v2" /> <rect x="4" y="4" width="16" height="16" rx="2" /> <rect x="8" y="8" width="8" height="8" rx="1" /></svg></span>
+        <span>Automação residencial</span>
+      </div>
+      <div class="serv-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /> <path d="M12 2v2" /> <path d="M12 20v2" /> <path d="m4.93 4.93 1.41 1.41" /> <path d="m17.66 17.66 1.41 1.41" /> <path d="M2 12h2" /> <path d="M20 12h2" /> <path d="m6.34 17.66-1.41 1.41" /> <path d="m19.07 4.93-1.41 1.41" /></svg></span>
+        <span>Energia solar</span>
+      </div>
+      <div class="serv-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 10v.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z" /> <path d="M7 16v6" /> <path d="M13 19v3" /> <path d="M12 19h8.3a1 1 0 0 0 .7-1.7L18 14h.3a1 1 0 0 0 .7-1.7L16 9h.2a1 1 0 0 0 .8-1.7L13 3l-1.4 1.5" /></svg></span>
+        <span>Paisagismo</span>
+      </div>
+      <div class="serv-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z" /> <path d="m2 22 3-3" /> <path d="M7.5 13.5 10 11" /> <path d="M10.5 16.5 13 14" /> <path d="m18 3-4 4h6l-4 4" /></svg></span>
+        <span>Carregadores para veículos elétricos</span>
+      </div>
+      <div class="serv-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0" /> <path d="M2 19q2.5 2 5 0t5 0 5 0 5 0" /> <path d="M2 5q2.5 2 5 0t5 0 5 0 5 0" /></svg></span>
+        <span>Piscinas</span>
+      </div>
+      <div class="serv-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /> <path d="m9 12 2 2 4-4" /></svg></span>
+        <span>Sistemas de segurança</span>
+      </div>
+      <div class="serv-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" /> <path d="M20 2v4" /> <path d="M22 4h-4" /> <circle cx="4" cy="20" r="2" /></svg></span>
+        <span>Limpeza e preparação pós-obra</span>
+      </div>
+      <div class="serv-item">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="6" x="2" y="2" rx="2" /> <path d="M10 16v-2a2 2 0 0 1 2-2h8a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" /> <rect width="4" height="6" x="8" y="16" rx="1" /></svg></span>
+        <span>Pintura</span>
+      </div>
+      <div class="serv-item filler">
+        <svg class="logo-mark" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" style="width:26px;height:auto;color:var(--gold-soft);"><path d="m1070.08 0h266.97l218.42 327.64 220.16 325.91-13.86 162.95-13.87 161.22-161.22 52.01-161.22 50.27-582.47-143.89c-320.71-78-610.21-154.28-641.42-166.42l-57.2-24.26v-324.18l268.7-176.82c149.08-95.35 283.11-167.47 294.7-175.09 33.73-22.19 87.24-50.66 95.34-53.74 31.59-12.01 119.62-15.6 266.97-15.6zm-269.99 23.18l-627 728.37 1585.46-106.43z"/></svg>
+        <span>E se o que você precisa não está na lista, é só perguntar</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIFERENCIAL ============ -->
+<section class="diferencial" id="diferencial">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Diferencial</p>
+      <h2>Por que nos contratar?</h2>
+      <p>Facilitamos o seu projeto</p>
+    </div>
+    <div class="pilares">
+      <div class="pilar"><span class="n">01</span><h4>Curadoria</h4><p>Selecionamos o que realmente faz sentido para o seu projeto</p></div>
+      <div class="pilar"><span class="n">02</span><h4>Relacionamento</h4><p>Anos de proximidade com fornecedores e parceiros</p></div>
+      <div class="pilar"><span class="n">03</span><h4>Acesso direto às fábricas</h4><p>Sem intermediários desnecessários</p></div>
+      <div class="pilar"><span class="n">04</span><h4>Condições comerciais</h4><p>Orçamentos mais competitivos</p></div>
+      <div class="pilar"><span class="n">05</span><h4>Soluções integradas</h4><p>Tudo conversando entre si, sem dor de cabeça</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARA QUEM É ============ -->
+<section class="publico-section" id="publico">
+  <div class="publico">
+    <div class="publico-col b2b">
+      <span class="tag"><span class="tag-fill"></span><span class="tag-label">B2B</span></span>
+      <h3>Arquitetos, designers de interiores, construtoras e incorporadoras</h3>
+      <p>Ganhe tempo e agilidade: conectamos você a fornecedores confiáveis e fortalecemos parcerias que geram novas oportunidades de negócio.</p>
+    </div>
+    <div class="publico-col b2c">
+      <span class="tag"><span class="tag-fill"></span><span class="tag-label">B2C</span></span>
+      <h3>Quem está planejando ou reformando um espaço</h3>
+      <p>Você não precisa entender de fornecedores, prazos e negociações. A gente cuida disso, para que seu projeto saia do papel com tranquilidade.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARCEIROS ============ -->
+<section class="parceiros" id="parceiros">
+  <div class="wrap parceiros-wrap">
+    <p class="eyebrow">Parceiros</p>
+    <h2 class="parceiros-lead">E, para que essa experiência se estenda do projeto à realização, o Gerenciamento de Obras também atua na curadoria e conexão com fornecedores, fabricantes e prestadores de serviços, buscando soluções, condições e parceiros alinhados a cada projeto. Trabalhamos com uma rede de parceiros e fornecedores selecionados, estabelecendo conexões que agregam qualidade, confiança, eficiência e melhores possibilidades para cada projeto.</h2>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="marquee-item"><img src="assets/images/partners/dcoracao.svg" alt="D'Coração Ambientes"><span class="partner-tags"><span class="partner-tag">Ambientes</span></span></span>
+      <span class="marquee-item"><img src="assets/images/partners/jf-home-solutions.svg" alt="JF Home Solutions"><span class="partner-tags"><span class="partner-tag">Automação residencial e predial</span></span></span>
+      <span class="marquee-item"><img src="assets/images/partners/villarta.svg" alt="Villarta Elevadores"><span class="partner-tags"><span class="partner-tag">Elevadores</span></span></span>
+      <span class="marquee-item"><img src="assets/images/partners/masao.svg" alt="Masao Paisagismo"><span class="partner-tags"><span class="partner-tag">Paisagismo</span></span></span>
+      <span class="marquee-item"><img src="assets/images/partners/forccis.svg" alt="Fórccis Projetos e Construções"><span class="partner-tags"><span class="partner-tag">Projetos e Construções</span></span></span>
+      <span class="marquee-item"><img src="assets/images/partners/stilo.svg" alt="Stilo Movelaria"><span class="partner-tags"><span class="partner-tag">Movelaria</span></span></span>
+      <span class="marquee-item"><img src="assets/images/partners/rinaldo.svg" alt="Rinaldo Arquiteto e Urbanista"><span class="partner-tags"><span class="partner-tag">Arquitetura e Urbanismo</span></span></span>
+      <span class="marquee-item"><img src="assets/images/partners/master-vale.svg" alt="Master Vale Climatização e Refrigeração"><span class="partner-tags"><span class="partner-tag">Climatização e Refrigeração</span><span class="partner-tag partner-tag--sub">Autorizada oficial da LG</span></span></span>
+      <span class="marquee-item"><img src="assets/images/partners/ornare.png" alt="Ornare"><span class="partner-tags"><span class="partner-tag">Movelaria planejada</span></span></span>
+      <span class="marquee-item"><img src="assets/images/partners/a-monogram.svg" alt="Arantes Marmoraria"><span class="partner-tags"><span class="partner-tag">Marmoraria</span></span></span>
+      <span class="marquee-item" aria-hidden="true"><img src="assets/images/partners/dcoracao.svg" alt="" aria-hidden="true"><span class="partner-tags"><span class="partner-tag">Ambientes</span></span></span>
+      <span class="marquee-item" aria-hidden="true"><img src="assets/images/partners/jf-home-solutions.svg" alt="" aria-hidden="true"><span class="partner-tags"><span class="partner-tag">Automação residencial e predial</span></span></span>
+      <span class="marquee-item" aria-hidden="true"><img src="assets/images/partners/villarta.svg" alt="" aria-hidden="true"><span class="partner-tags"><span class="partner-tag">Elevadores</span></span></span>
+      <span class="marquee-item" aria-hidden="true"><img src="assets/images/partners/masao.svg" alt="" aria-hidden="true"><span class="partner-tags"><span class="partner-tag">Paisagismo</span></span></span>
+      <span class="marquee-item" aria-hidden="true"><img src="assets/images/partners/forccis.svg" alt="" aria-hidden="true"><span class="partner-tags"><span class="partner-tag">Projetos e Construções</span></span></span>
+      <span class="marquee-item" aria-hidden="true"><img src="assets/images/partners/stilo.svg" alt="" aria-hidden="true"><span class="partner-tags"><span class="partner-tag">Movelaria</span></span></span>
+      <span class="marquee-item" aria-hidden="true"><img src="assets/images/partners/rinaldo.svg" alt="" aria-hidden="true"><span class="partner-tags"><span class="partner-tag">Arquitetura e Urbanismo</span></span></span>
+      <span class="marquee-item" aria-hidden="true"><img src="assets/images/partners/master-vale.svg" alt="" aria-hidden="true"><span class="partner-tags"><span class="partner-tag">Climatização e Refrigeração</span><span class="partner-tag partner-tag--sub">Autorizada oficial da LG</span></span></span>
+      <span class="marquee-item" aria-hidden="true"><img src="assets/images/partners/ornare.png" alt="" aria-hidden="true"><span class="partner-tags"><span class="partner-tag">Movelaria planejada</span></span></span>
+      <span class="marquee-item" aria-hidden="true"><img src="assets/images/partners/a-monogram.svg" alt="" aria-hidden="true"><span class="partner-tags"><span class="partner-tag">Marmoraria</span></span></span>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="regioes">
+      <span class="regiao-chip">Vale do Paraíba</span>
+      <span class="regiao-chip">Litoral</span>
+      <span class="regiao-chip">São Paulo</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJETOS / GALERIAS ============ -->
+<section class="projetos slide-dark" id="projetos">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center; margin-left:auto; margin-right:auto;">
+      <p class="eyebrow">Projetos</p>
+      <h2>Projetos que já colocamos em movimento</h2>
+      <p>Uma amostra do tipo de ambiente que ajudamos a construir, em breve com fotos dos projetos reais da Daniela.</p>
+    </div>
+
+    <div class="gal-stack">
+      <div class="gal" data-gallery="render" data-label="Render de casa" role="region" aria-roledescription="carrossel" aria-label="Render de casa">
+        <div class="gal-head">
+          <h3>Render de casa</h3>
+          <div class="gal-ctrls">
+            <button type="button" class="gal-arrow" data-dir="-1" aria-label="Anterior: Render de casa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+            <button type="button" class="gal-arrow" data-dir="1" aria-label="Próximo: Render de casa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+          </div>
+        </div>
+        <div class="gal-track" tabindex="0" aria-label="Render de casa. Arraste ou use as setas do teclado."></div>
+      </div>
+      <div class="gal" data-gallery="obras" data-label="Fotos de Obras" role="region" aria-roledescription="carrossel" aria-label="Fotos de Obras">
+        <div class="gal-head">
+          <h3>Fotos de Obras</h3>
+          <div class="gal-ctrls">
+            <button type="button" class="gal-arrow" data-dir="-1" aria-label="Anterior: Fotos de Obras"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+            <button type="button" class="gal-arrow" data-dir="1" aria-label="Próximo: Fotos de Obras"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+          </div>
+        </div>
+        <div class="gal-track" tabindex="0" aria-label="Fotos de Obras. Arraste ou use as setas do teclado."></div>
+      </div>
+      <div class="gal" data-gallery="paisagismo" data-label="Paisagismo" role="region" aria-roledescription="carrossel" aria-label="Paisagismo">
+        <div class="gal-head">
+          <h3>Paisagismo</h3>
+          <div class="gal-ctrls">
+            <button type="button" class="gal-arrow" data-dir="-1" aria-label="Anterior: Paisagismo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+            <button type="button" class="gal-arrow" data-dir="1" aria-label="Próximo: Paisagismo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+          </div>
+        </div>
+        <div class="gal-track" tabindex="0" aria-label="Paisagismo. Arraste ou use as setas do teclado."></div>
+      </div>
+      <div class="gal" data-gallery="planejados" data-label="Planejados" role="region" aria-roledescription="carrossel" aria-label="Planejados">
+        <div class="gal-head">
+          <h3>Planejados</h3>
+          <div class="gal-ctrls">
+            <button type="button" class="gal-arrow" data-dir="-1" aria-label="Anterior: Planejados"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+            <button type="button" class="gal-arrow" data-dir="1" aria-label="Próximo: Planejados"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+          </div>
+        </div>
+        <div class="gal-track" tabindex="0" aria-label="Planejados. Arraste ou use as setas do teclado."></div>
+      </div>
+
+      <div class="gal gal-videos" id="galeria-obras" role="region" aria-roledescription="carrossel" aria-label="Vídeos das obras">
+        <div class="gal-head">
+          <h3>Vídeos das obras</h3>
+          <div class="gal-ctrls" id="vdCtrls">
+            <button type="button" class="gal-arrow" id="vdPrev" aria-label="Vídeo anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+            <button type="button" class="gal-arrow" id="vdNext" aria-label="Próximo vídeo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+          </div>
+        </div>
+        <div class="vd-track" id="vdTrack"></div>
+        <div class="vd-dots" id="vdDots"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap proj-purpose">
+    <p class="proj-purpose-text">Nosso propósito é facilitar caminhos, aproximar pessoas e transformar boas ideias em espaços que façam sentido para quem os vive.</p>
+    <p class="proj-purpose-emphasis">Porque acreditamos que projetar é também cuidar.</p>
+  </div>
+
+  <div class="wrap">
+    <div class="proj-cta">
+      <a href="#contactDrawer" data-open-contact aria-haspopup="dialog" aria-controls="contactDrawer" class="btn-primary">Entre em contato</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RODAPÉ ============ -->
+<footer class="rodape" id="rodape">
+  <p class="footer-tagline">Projetamos. Conectamos. Realizamos.<br><em>Arquitetura que acolhe.</em></p>
+
+  <div class="wrap footer-bottom">
+    <span class="brand" style="font-size:1rem;">Ballabio Arquitetura & Design</span>
+    <span>© 2026 Ballabio Arquitetura & Design. Serviço de Gerenciamento de Obras. Todos os direitos reservados.</span>
+  </div>
+</footer>
+
+<!-- ============ WHATSAPP FLUTUANTE ============ -->
+<!-- Troque o número no href abaixo pelo WhatsApp real da Daniela -->
+<button type="button" class="whatsapp-fab" data-open-contact aria-haspopup="dialog" aria-controls="contactDrawer" aria-label="Falar no WhatsApp">
+  <span class="whatsapp-fab-icon">
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </span>
+  <span class="whatsapp-fab-label">Falar no WhatsApp</span>
+</button>
+
+<!-- ============ CONTATO: FORMULÁRIO OFF-CANVAS (sobe a partir da base da tela) ============ -->
+<div class="contact-backdrop" id="contactBackdrop"></div>
+<aside class="contact-drawer" id="contactDrawer" role="dialog" aria-modal="true" aria-labelledby="contactTitle" aria-hidden="true" tabindex="-1">
+  <button type="button" class="contact-close" id="contactClose" aria-label="Fechar formulário">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+  </button>
+  <div class="contact-scroll">
+    <div class="form-wrap">
+      <div class="form-head">
+        <svg class="logo-mark" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg"><path d="m1070.08 0h266.97l218.42 327.64 220.16 325.91-13.86 162.95-13.87 161.22-161.22 52.01-161.22 50.27-582.47-143.89c-320.71-78-610.21-154.28-641.42-166.42l-57.2-24.26v-324.18l268.7-176.82c149.08-95.35 283.11-167.47 294.7-175.09 33.73-22.19 87.24-50.66 95.34-53.74 31.59-12.01 119.62-15.6 266.97-15.6zm-269.99 23.18l-627 728.37 1585.46-106.43z"/></svg>
+        <h2 id="contactTitle">Entre em contato</h2>
+        <p>Conte um pouco sobre o seu projeto. Sem compromisso. É só o primeiro passo de uma conversa.</p>
+      </div>
+      <form class="brainstorm-form" id="brainstormForm">
+        <div class="field">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+        </div>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+        </div>
+        <div class="field">
+          <label for="telefone">Telefone / WhatsApp</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+        </div>
+        <div class="field">
+          <label for="perfil">Você é</label>
+          <select id="perfil" name="perfil">
+            <option>Arquiteto(a)</option>
+            <option>Designer de interiores</option>
+            <option>Construtora ou incorporadora</option>
+            <option>Pessoa física</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="estagio">Em que estágio está o seu projeto?</label>
+          <select id="estagio" name="estagio">
+            <option>Ainda planejando</option>
+            <option>Já em obra</option>
+            <option>Buscando fornecedores específicos</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="mensagem">Conte um pouco do que você precisa</label>
+          <textarea id="mensagem" name="mensagem" placeholder="Descreva brevemente seu projeto..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Enviar e começar a conversa</button>
+      </form>
+      <p class="form-note">Assim que você enviar, entramos em contato o quanto antes pelo WhatsApp ou e-mail, o que for mais confortável pra você.</p>
+    </div>
+  </div>
+</aside>
+
+<!-- ============ LIGHTBOX (preview de projetos) ============ -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-btn lightbox-close" id="lightboxClose" aria-label="Fechar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+  </button>
+  <button class="lightbox-btn lightbox-prev" id="lightboxPrev" aria-label="Foto anterior">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+  </button>
+  <button class="lightbox-btn lightbox-next" id="lightboxNext" aria-label="Próxima foto">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+  </button>
+  <div class="lightbox-content">
+    <img class="lightbox-img" id="lightboxImg" src="" alt="Prévia do projeto">
+  </div>
+</div>
+
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Header em glassmorphism (vidro escuro + logo/botão brancos) enquanto ainda está no topo da página
+  var topNav = document.querySelector(".topnav");
+  function updateNavState() {
+    if (window.scrollY < 60) {
+      topNav.classList.add("at-top");
+    } else {
+      topNav.classList.remove("at-top");
+    }
+  }
+  updateNavState();
+  window.addEventListener("scroll", updateNavState, { passive: true });
+
+  // Menu off-canvas
+  (function () {
+    var toggle = document.getElementById("menuToggle");
+    var menu = document.getElementById("offcanvasMenu");
+    var backdrop = document.getElementById("offcanvasBackdrop");
+    var closeBtn = document.getElementById("offcanvasClose");
+    var links = document.querySelectorAll(".offcanvas-link, .offcanvas-cta");
+
+    function openMenu() {
+      toggle.classList.add("is-open");
+      menu.classList.add("is-open");
+      backdrop.classList.add("is-open");
+      toggle.setAttribute("aria-expanded", "true");
+      menu.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeMenu() {
+      toggle.classList.remove("is-open");
+      menu.classList.remove("is-open");
+      backdrop.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      menu.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    toggle.addEventListener("click", function () {
+      if (menu.classList.contains("is-open")) closeMenu(); else openMenu();
+    });
+    closeBtn.addEventListener("click", closeMenu);
+    backdrop.addEventListener("click", closeMenu);
+    links.forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && menu.classList.contains("is-open")) closeMenu();
+    });
+  })();
+
+  // Formulário de contato off-canvas: sobe a partir da base da tela.
+  // Abre por qualquer elemento com [data-open-contact] (botão flutuante do WhatsApp e todos os CTAs "Entre em contato").
+  (function () {
+    var drawer = document.getElementById("contactDrawer");
+    var backdrop = document.getElementById("contactBackdrop");
+    var closeBtn = document.getElementById("contactClose");
+    if (!drawer || !backdrop) return;
+    var lastTrigger = null;
+
+    function isOpen() { return drawer.classList.contains("is-open"); }
+
+    function openContact(trigger) {
+      if (isOpen()) return;
+      lastTrigger = trigger || document.activeElement;
+      drawer.classList.add("is-open");
+      backdrop.classList.add("is-open");
+      drawer.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      drawer.querySelector(".contact-scroll").scrollTop = 0;
+      drawer.focus({ preventScroll: true }); // foca o próprio painel (não abre o teclado no celular sem o usuário pedir)
+    }
+
+    function closeContact() {
+      if (!isOpen()) return;
+      drawer.classList.remove("is-open");
+      backdrop.classList.remove("is-open");
+      drawer.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      if (lastTrigger && lastTrigger.focus) lastTrigger.focus({ preventScroll: true });
+      lastTrigger = null;
+    }
+    window.closeContactDrawer = closeContact; // usado pelo envio do formulário
+
+    document.querySelectorAll("[data-open-contact]").forEach(function (el) {
+      el.addEventListener("click", function (e) {
+        e.preventDefault();
+        openContact(el);
+      });
+    });
+    closeBtn.addEventListener("click", closeContact);
+    backdrop.addEventListener("click", closeContact);
+
+    document.addEventListener("keydown", function (e) {
+      if (!isOpen()) return;
+      if (e.key === "Escape") { closeContact(); return; }
+      if (e.key !== "Tab") return;
+      // mantém o foco do teclado dentro do formulário enquanto ele está aberto
+      var f = drawer.querySelectorAll('button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), a[href]');
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && (document.activeElement === first || document.activeElement === drawer)) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+  })();
+
+
+
+  // Efeito "levantar" ao passar o mouse (Diferencial — pilares)
+  document.querySelectorAll('.pilar').forEach(function (pilar) {
+    pilar.addEventListener('mouseenter', function () {
+      if (window.gsap) {
+        gsap.to(pilar, { y: -10, duration: 0.2, ease: "power2.out" });
+      } else {
+        pilar.style.transition = "transform 0.2s ease";
+        pilar.style.transform = "translateY(-10px)";
+      }
+    });
+    pilar.addEventListener('mouseleave', function () {
+      if (window.gsap) {
+        gsap.to(pilar, { y: 0, duration: 0.2, ease: "power2.out" });
+      } else {
+        pilar.style.transform = "translateY(0)";
+      }
+    });
+  });
+
+  // Barra "B2B / B2C" carrega como progress bar ao entrar na tela
+  var publicoSection = document.querySelector(".publico-section");
+  if (publicoSection) {
+    var tagFills = publicoSection.querySelectorAll(".tag-fill");
+    var played = false;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && !played) {
+          played = true;
+          tagFills.forEach(function (fill, i) {
+            if (window.gsap) {
+              gsap.to(fill, {
+                scaleX: 1,
+                duration: 0.9,
+                ease: "power2.out",
+                delay: i * 0.15
+              });
+            } else {
+              setTimeout(function () {
+                fill.style.transition = "transform 0.9s ease";
+                fill.style.transform = "scaleX(1)";
+              }, i * 150);
+            }
+          });
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.35 });
+    observer.observe(publicoSection);
+  }
+
+
+  // ============ Lightbox (usado por todas as galerias) ============
+  // openSiteLightbox(indice, lista): lista = [{ url: '...' }]; navega só dentro da galeria clicada.
+  (function () {
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightboxImg');
+    var btnClose = document.getElementById('lightboxClose');
+    var btnPrev = document.getElementById('lightboxPrev');
+    var btnNext = document.getElementById('lightboxNext');
+    var list = [], currentIndex = 0;
+
+    function show() { lightboxImg.src = list[currentIndex].url; lightboxImg.alt = list[currentIndex].alt || ''; }
+    function openLightbox(index, l) {
+      list = l; currentIndex = index; show();
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    function showNext() { currentIndex = (currentIndex + 1) % list.length; show(); }
+    function showPrev() { currentIndex = (currentIndex - 1 + list.length) % list.length; show(); }
+
+    window.openSiteLightbox = openLightbox;
+    btnClose.addEventListener('click', closeLightbox);
+    btnNext.addEventListener('click', showNext);
+    btnPrev.addEventListener('click', showPrev);
+    lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') showNext();
+      if (e.key === 'ArrowLeft') showPrev();
+    });
+  })();
+
+  // ============ Galerias em slider ============
+  // Para trocar fotos: edite as listas abaixo (um caminho por linha). A galeria monta sozinha os slides,
+  // o botão anterior/próximo e o arrastar com o mouse. Render e Paisagismo/Planejados ainda usam fotos provisórias.
+  var GALLERIES = {
+    destaque: [
+      'assets/images/projetos/projeto-41.jpg',
+      'assets/images/projetos/projeto-46.jpg',
+      'assets/images/projetos/projeto-49.jpg',
+      'assets/images/projetos/projeto-53.jpg',
+      'assets/images/projetos/projeto-44.jpg'
+    ],
+    render: [
+      'assets/images/projetos/projeto-41.jpg',
+      'assets/images/projetos/projeto-44.jpg',
+      'assets/images/projetos/projeto-46.jpg',
+      'assets/images/projetos/projeto-55.jpg',
+      'assets/images/projetos/projeto-57.jpg',
+      'assets/images/projetos/projeto-49.jpg',
+      'assets/images/projetos/projeto-51.jpg',
+      'assets/images/projetos/projeto-53.jpg',
+      'assets/images/projetos/projeto-60.jpg'
+    ],
+    obras: [
+      'assets/images/obras/obra-01.jpg',
+      'assets/images/obras/obra-02.jpg',
+      'assets/images/obras/obra-03.jpg',
+      'assets/images/obras/obra-04.jpg',
+      'assets/images/obras/obra-05.jpg',
+      'assets/images/obras/obra-06.jpg',
+      'assets/images/obras/obra-07.jpg',
+      'assets/images/obras/obra-08.jpg',
+      'assets/images/obras/obra-09.jpg',
+      'assets/images/obras/obra-10.jpg',
+      'assets/images/obras/obra-11.jpg'
+    ],
+    paisagismo: [
+      'assets/images/projetos/projeto-42.jpg',
+      'assets/images/projetos/projeto-43.jpg',
+      'assets/images/projetos/projeto-45.jpg',
+      'assets/images/projetos/projeto-47.jpg',
+      'assets/images/projetos/projeto-48.jpg',
+      'assets/images/projetos/projeto-50.jpg',
+      'assets/images/projetos/projeto-52.jpg',
+      'assets/images/projetos/projeto-54.jpg',
+      'assets/images/projetos/projeto-56.jpg',
+      'assets/images/projetos/projeto-58.jpg',
+      'assets/images/projetos/projeto-59.jpg'
+    ],
+    planejados: [
+      'assets/images/projetos/projeto-02.jpg',
+      'assets/images/projetos/projeto-05.jpg',
+      'assets/images/projetos/projeto-06.jpg',
+      'assets/images/projetos/projeto-08.jpg',
+      'assets/images/projetos/projeto-09.jpg',
+      'assets/images/projetos/projeto-18.jpg',
+      'assets/images/projetos/projeto-27.jpg',
+      'assets/images/projetos/projeto-28.jpg',
+      'assets/images/projetos/projeto-29.jpg',
+      'assets/images/projetos/projeto-30.jpg',
+      'assets/images/projetos/projeto-32.jpg',
+      'assets/images/projetos/projeto-33.jpg',
+      'assets/images/projetos/projeto-34.jpg',
+      'assets/images/projetos/projeto-35.jpg',
+      'assets/images/projetos/projeto-36.jpg',
+      'assets/images/projetos/projeto-37.jpg',
+      'assets/images/projetos/projeto-38.jpg',
+      'assets/images/projetos/projeto-39.jpg',
+      'assets/images/projetos/projeto-40.jpg',
+      'assets/images/projetos/projeto-61.jpg',
+      'assets/images/projetos/projeto-62.jpg',
+      'assets/images/projetos/projeto-63.jpg'
+    ]
+  };
+
+  (function () {
+    var SMOOTH = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+
+    document.querySelectorAll('[data-gallery]').forEach(function (root) {
+      var photos = GALLERIES[root.getAttribute('data-gallery')] || [];
+      var label = root.getAttribute('data-label') || 'Foto';
+      var track = root.querySelector('.gal-track');
+      var prev = root.querySelector('[data-dir="-1"]');
+      var next = root.querySelector('[data-dir="1"]');
+      var ctrls = root.querySelector('.gal-ctrls');
+      var items = photos.map(function (url, i) { return { url: url, alt: label + ' ' + (i + 1) + ' de ' + photos.length }; });
+
+      items.forEach(function (it, i) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'gal-item';
+        b.setAttribute('aria-label', 'Ampliar: ' + it.alt);
+        var img = new Image();
+        img.src = it.url; img.alt = ''; img.loading = 'lazy'; img.decoding = 'async'; img.draggable = false;
+        b.appendChild(img);
+        b.addEventListener('click', function () {
+          if (track._moved) return; // foi um arraste, não um clique
+          window.openSiteLightbox(i, items);
+        });
+        track.appendChild(b);
+      });
+
+      function gap() { return parseFloat(getComputedStyle(track).columnGap) || 0; }
+      function itemW() { var f = track.firstElementChild; return f ? f.offsetWidth : 0; }
+      function perPage() { var w = itemW(), g = gap(); return Math.max(1, Math.floor((track.clientWidth + g) / (w + g))); }
+      function pageStep() { return perPage() * (itemW() + gap()); }
+      function update() {
+        var max = track.scrollWidth - track.clientWidth;
+        prev.disabled = track.scrollLeft <= 2;
+        next.disabled = track.scrollLeft >= max - 2;
+        ctrls.hidden = max <= 2;
+      }
+
+      prev.addEventListener('click', function () { track.scrollBy({ left: -pageStep(), behavior: SMOOTH }); });
+      next.addEventListener('click', function () { track.scrollBy({ left: pageStep(), behavior: SMOOTH }); });
+      track.addEventListener('keydown', function (e) {
+        var lb = document.getElementById('lightbox');
+        if (lb && lb.classList.contains('active')) return;
+        if (e.key === 'ArrowRight') { e.preventDefault(); next.click(); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); prev.click(); }
+      });
+      var ticking = false;
+      track.addEventListener('scroll', function () {
+        if (ticking) return; ticking = true;
+        requestAnimationFrame(function () { ticking = false; update(); });
+      }, { passive: true });
+      window.addEventListener('resize', update);
+
+      // arrastar com o mouse (no toque, o próprio navegador rola)
+      var down = false, startX = 0, startLeft = 0;
+      track.addEventListener('mousedown', function (e) {
+        if (e.button !== 0) return;
+        down = true; track._moved = false; startX = e.clientX; startLeft = track.scrollLeft;
+        e.preventDefault();
+      });
+      window.addEventListener('mousemove', function (e) {
+        if (!down) return;
+        var dx = e.clientX - startX;
+        if (!track._moved && Math.abs(dx) > 5) { track._moved = true; track.classList.add('is-dragging'); }
+        if (track._moved) track.scrollLeft = startLeft - dx;
+      });
+      window.addEventListener('mouseup', function () {
+        if (!down) return;
+        down = false;
+        if (track._moved) {
+          track.classList.remove('is-dragging');
+          var step = itemW() + gap();
+          track.scrollTo({ left: Math.round(track.scrollLeft / step) * step, behavior: SMOOTH }); // encaixa no slide mais próximo
+          setTimeout(function () { track._moved = false; }, 0);
+        }
+      });
+      update();
+    });
+  })();
+
+  // Vídeos: Reels públicos do Instagram. Basta o ID (o trecho que vem depois de /reel/ no link).
+  var OBRAS_VIDEOS = [
+    { id: 'DYVTKiHJ34h' },
+    { id: 'DcYvXBcu62x' },
+    { id: 'DcxvXeJovwu' },
+    { id: 'DFqDDZBIgsV' }
+  ];
+
+  var OBRAS_SCROLL_BEHAVIOR = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+
+  // --- Slider de vídeos verticais (Reels do Instagram): 2 por vez no desktop/tablet, 1 por vez no celular ---
+  (function () {
+    var track = document.getElementById('vdTrack');
+    var dotsBox = document.getElementById('vdDots');
+    var ctrls = document.getElementById('vdCtrls');
+    var btnPrev = document.getElementById('vdPrev');
+    var btnNext = document.getElementById('vdNext');
+    if (!track || !OBRAS_VIDEOS.length) return;
+
+    var mobileMQ = window.matchMedia('(max-width: 760px)'); // mesmo ponto de troca do CSS (.vd-item)
+    var items = [];
+
+    OBRAS_VIDEOS.forEach(function (v, i) {
+      var el = document.createElement('div');
+      el.className = 'vd-item';
+      el.setAttribute('role', 'group');
+      el.setAttribute('aria-roledescription', 'slide');
+      el.setAttribute('aria-label', 'Vídeo ' + (i + 1) + ' de ' + OBRAS_VIDEOS.length);
+      var frame = document.createElement('div');
+      frame.className = 'vd-frame';
+      var link = document.createElement('a');
+      link.className = 'vd-link';
+      link.href = 'https://www.instagram.com/reel/' + v.id + '/';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = 'Abrir no Instagram ↗';
+      el.appendChild(frame);
+      el.appendChild(link);
+      track.appendChild(el);
+      items.push({ el: el, frame: frame, id: v.id, iframe: null });
+    });
+
+    // O embed só existe enquanto o vídeo está visível (na tela e dentro da janela do slider).
+    // Assim a página não carrega os 4 embeds de uma vez, e sair do vídeo também o pausa.
+    function mount(it) {
+      if (it.iframe) return;
+      var f = document.createElement('iframe');
+      f.src = 'https://www.instagram.com/reel/' + it.id + '/embed/';
+      f.title = 'Vídeo da obra no Instagram';
+      f.setAttribute('scrolling', 'no');
+      f.setAttribute('frameborder', '0');
+      f.setAttribute('allowfullscreen', '');
+      f.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture; web-share';
+      it.frame.appendChild(f);
+      it.iframe = f;
+    }
+    function unmount(it) {
+      if (!it.iframe) return;
+      it.iframe.remove();
+      it.iframe = null;
+    }
+
+    // Altura real do embed (informada pelo próprio Instagram). Vale para TODOS os quadros, inclusive os que
+    // não estão montados, para a altura do slider não oscilar nem sobrar espaço em branco embaixo dos vídeos.
+    var measuredH = 0;
+    function applyHeight(px) {
+      items.forEach(function (it) {
+        it.frame.style.aspectRatio = px ? 'auto' : '';
+        it.frame.style.height = px ? px + 'px' : '';
+      });
+    }
+
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          var it = items.filter(function (x) { return x.el === en.target; })[0];
+          if (!it) return;
+          if (en.isIntersecting) mount(it); else unmount(it);
+        });
+      }, { root: null, rootMargin: '250px 0px', threshold: 0.01 });
+      items.forEach(function (it) { io.observe(it.el); });
+    } else {
+      items.forEach(mount);
+    }
+
+    // O Instagram informa a altura real do embed (mesmo mecanismo do embed.js oficial): ajusta o quadro para não sobrar nem cortar.
+    window.addEventListener('message', function (e) {
+      if (e.origin !== 'https://www.instagram.com') return;
+      var data = e.data;
+      if (typeof data === 'string') { try { data = JSON.parse(data); } catch (err) { return; } }
+      if (!data || data.type !== 'MEASURE' || !data.details || !data.details.height) return;
+      var mine = items.some(function (it) { return it.iframe && it.iframe.contentWindow === e.source; });
+      if (!mine) return;
+      var px = Math.ceil(data.details.height);
+      if (px > measuredH) { measuredH = px; applyHeight(px); }
+    });
+
+    // Se a largura dos vídeos mudar (girar o celular, redimensionar a janela), a altura medida deixa de valer:
+    // volta ao tamanho padrão e recarrega os embeds visíveis para o Instagram medir de novo.
+    var lastFrameW = items[0].frame.offsetWidth, resizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        var w = items[0].frame.offsetWidth;
+        if (Math.abs(w - lastFrameW) <= 8) return;
+        lastFrameW = w;
+        measuredH = 0;
+        applyHeight(0);
+        items.forEach(function (it) { if (it.iframe) { unmount(it); mount(it); } });
+      }, 250);
+    });
+
+    // --- navegação ---
+    function perView() { return mobileMQ.matches ? 1 : 2; }
+    function positions() { return Math.max(1, items.length - perView() + 1); }
+    function step() {
+      var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      return items[0].el.offsetWidth + gap;
+    }
+    function index() { return Math.min(positions() - 1, Math.round(track.scrollLeft / step())); }
+    function goTo(i) {
+      i = Math.max(0, Math.min(positions() - 1, i));
+      track.scrollTo({ left: i * step(), behavior: OBRAS_SCROLL_BEHAVIOR });
+    }
+
+    function buildDots() {
+      dotsBox.innerHTML = '';
+      var n = positions();
+      ctrls.hidden = dotsBox.hidden = n <= 1;
+      for (var p = 0; p < n; p++) {
+        (function (p) {
+          var d = document.createElement('button');
+          d.type = 'button';
+          d.className = 'vd-dot';
+          d.setAttribute('aria-label', 'Ir para o vídeo ' + (p + 1));
+          d.addEventListener('click', function () { goTo(p); });
+          dotsBox.appendChild(d);
+        })(p);
+      }
+    }
+    function update() {
+      var idx = index();
+      var dots = dotsBox.children;
+      for (var k = 0; k < dots.length; k++) {
+        if (k === idx) dots[k].setAttribute('aria-current', 'true'); else dots[k].removeAttribute('aria-current');
+      }
+    }
+
+    var ticking = false;
+    track.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () { ticking = false; update(); });
+    });
+
+    // Setas em loop infinito: depois do último vídeo volta ao primeiro, e antes do primeiro vai ao último.
+    // A volta não rola por cima dos vídeos do meio (isso carregaria embeds do Instagram à toa): o slider some
+    // rapidamente (fade), salta direto para o destino e reaparece.
+    var wrapping = false;
+    function wrapTo(i) {
+      if (wrapping) return;
+      wrapping = true;
+      var fade = OBRAS_SCROLL_BEHAVIOR === 'smooth' ? 220 : 0;
+      track.classList.add('is-wrapping');
+      setTimeout(function () {
+        track.scrollTo({ left: i * step(), behavior: 'auto' });
+        update();
+        requestAnimationFrame(function () {
+          track.classList.remove('is-wrapping');
+          setTimeout(function () { wrapping = false; }, fade);
+        });
+      }, fade);
+    }
+    function goNext() {
+      var i = index();
+      if (i >= positions() - 1) wrapTo(0); else goTo(i + 1);
+    }
+    function goPrev() {
+      var i = index();
+      if (i <= 0) wrapTo(positions() - 1); else goTo(i - 1);
+    }
+    btnPrev.addEventListener('click', goPrev);
+    btnNext.addEventListener('click', goNext);
+
+    function relayout() {
+      buildDots();
+      track.scrollTo({ left: index() * step(), behavior: 'auto' });
+      update();
+    }
+    if (mobileMQ.addEventListener) mobileMQ.addEventListener('change', relayout); else mobileMQ.addListener(relayout);
+    window.addEventListener('resize', update);
+    buildDots();
+    update();
+  })();
+
+  // Formulário Brainstorm: ao enviar, monta a mensagem e abre a conversa no WhatsApp
+  (function () {
+    var form = document.getElementById("brainstormForm");
+    if (!form) return;
+    var whatsappNumber = "5512981315103"; // Brasil (12) 98131-5103
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var nome = form.nome.value.trim();
+      var email = form.email.value.trim();
+      var telefone = form.telefone.value.trim();
+      var perfil = form.perfil.value;
+      var estagio = form.estagio.value;
+      var mensagem = form.mensagem.value.trim();
+
+      var linhas = [
+        "Olá! Vim pelo site da Ballabio Arquitetura & Design e gostaria de começar um projeto.",
+        "",
+        "Nome: " + nome,
+        "E-mail: " + email,
+        "Telefone: " + telefone,
+        "Perfil: " + perfil,
+        "Estágio do projeto: " + estagio
+      ];
+      if (mensagem) {
+        linhas.push("");
+        linhas.push("Mensagem: " + mensagem);
+      }
+
+      var texto = encodeURIComponent(linhas.join("\n"));
+      var url = "https://wa.me/" + whatsappNumber + "?text=" + texto;
+      window.open(url, "_blank", "noopener");
+      if (window.closeContactDrawer) window.closeContactDrawer();
+    });
+  })();
+</script>
+
+</body>
+</html>
