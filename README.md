@@ -36,7 +36,7 @@ assets/
     partners/                     — 10 logos de parceiros (SVG, e PNG no caso da Ornare)
     projetos/                     — 63 imagens (projeto-01.jpg a projeto-63.jpg); 42 são usadas nas galerias
     destaque/                     — 4 renders do Rinaldo com logo (rinaldo-1 a rinaldo-4.jpg), usados na faixa Render em destaque
-    obras/                        — 11 fotos de obra (obra-01.jpg a obra-11.jpg) + miniaturas -thumb (hoje não usadas)
+    obras/                        — 21 fotos de obra (obra-01.jpg a obra-21.jpg) + miniaturas -thumb (hoje não usadas)
 ```
 
 ## Paleta de cores
@@ -75,7 +75,7 @@ O `padding` lateral vem da própria `<section>` (e do rodapé); a classe `.wrap`
 | # | Seção | Fundo | Conteúdo |
 |---|---|---|---|
 | 1 | **Hero** (`#hero`) | Claro (`--paper`, sólido) | Só o logo dourado, o nome ("Ballabio Arquitetura & Design") e o slogan, centralizados. Texto e menu em preto |
-| — | **Render em destaque** (`#destaque`) | Claro | Faixa larga em slider logo abaixo do hero, com logo do Rinaldo, subtítulo "Parceria Destaque" e título "Render em destaque" |
+| — | **Render em destaque** (`#destaque`) | Claro | Faixa larga em slider logo abaixo do hero, com logo do Rinaldo, e subtítulo "Parceria Destaque" (sem o título "Render em destaque" visível; o rótulo continua no aria-label) |
 | 2 | **Sobre** (`#sobre`) | Claro | Texto "Como trabalhamos" + bloco do serviço **Gerenciamento de Obras** (lista de 4 itens, "Sob orçamento" e botão de contato), sem cards |
 | 3 | **Serviços** (`#servicos`) | **Escuro** (foto `sobre.jpg` + overlay) | Grid de 11 serviços + 1 item de fechamento |
 | 4 | **Diferencial** (`#diferencial`) | Claro | Título "Por que nos contratar?", subtítulo "Facilitamos o seu projeto" e 5 pilares |
